@@ -7,14 +7,11 @@ int main(){
     while(t--){
         int n,k;
         cin >> n >> k;
-        int a = n/k;
-        int b = k/2;
-        int c = n%k;
-        if(c<b){
-            cout << a*k+c <<"\n";
+        if((k/2) < (n%k)){
+            cout << (n/k)*k+(k/2) <<"\n";
         }
         else{
-            cout << a*k + b << "\n";
+            cout << (n/k)*k+(n%k) << "\n";
         }
     }
     return 0;
