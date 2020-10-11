@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-const long long p = 10e7+9;
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);cout.tie(NULL);
@@ -9,17 +8,27 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        long long k;
+        int k;
         cin >> k;
-        long long a[n];
-        for(int i=1;i<=n;i++){
+        int a[n];
+        for(int i=0;i<n;i++){
             cin >> a[i];
         }
         long long sum=0;
-        for(int i=1;i<=n;i++){
-            sum = (sum + (a[i]%p))%p;
+        int count =0;
+        for(int i=0;i<n;i++){
+            if((a[i]+sum)>=k){
+                sum = sum + a[i] - k;
+                count++;
+            }
+            else{
+                break;
+            }
         }
-        cout << (sum/k)+1 <<"\n";       
+        if(sum%k==0){
+            count = count + (sum/k);    
+        }
+        cout << count + 1 << "\n";
     }
     return 0;
 }
