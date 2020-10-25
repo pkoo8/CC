@@ -1,4 +1,4 @@
-/* C Program to traverse and print the data in a linked list*/
+/* C Program to traverse and print the data of a linked list in reverse order*/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -7,12 +7,14 @@ struct node{
     int data;
     struct node* next;
 };
+void Reverse(struct node* head)
+{
+  if(head == NULL)
+    return;
 
-void PrintList(struct node* n){
-    while(n!=NULL){
-        printf("The data in node is: %d\n",n->data);
-        n=n->next;
-    }
+  Reverse(head->next);
+
+  printf("%d  ", head->data);
 }
 
 int main(){
@@ -27,12 +29,14 @@ int main(){
 
     head->data=1;
     head->next=second;
+
     second->data=2;
     second->next=third;
+
     third->data=3;
     third->next = NULL;
 
-    PrintList(head);
+    Reverse(head);
 
     return 0;
 }
