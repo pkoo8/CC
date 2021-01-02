@@ -1,15 +1,20 @@
 #include<bits/stdc++.h>
-#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-const unsigned int M = 1000000007;
 using namespace std;
 int main(){
-    fastio
+
     #ifndef ONLINE_JUDGE
         freopen("input.txt", "r", stdin);
         freopen("output.txt", "w", stdout);
     #endif
-    int t;
-    cin >> t;
-    while(t--){}
+    vector<int>g1;
+    for(int i=1;i<10;i++){
+        g1.push_back(i);
+    }
+    for(auto i=g1.begin();i!=g1.end();i++){
+        cout << *i << " ";
+    }
+
+
+    
     return 0;
 }
