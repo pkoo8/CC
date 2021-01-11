@@ -12,6 +12,10 @@ int main(){
     #endif
     int t;
     cin >> t;
-    while(t--){}
+    string s[t];
+    while(t--){
+        cin >> s[t];
+        cout << s[t] << "\n";
+    }
     return 0;
 }
